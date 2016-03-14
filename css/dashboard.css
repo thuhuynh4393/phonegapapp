@@ -1,0 +1,44 @@
+.info-box-icon,.info-box-text{
+	display: inline-block;
+	vertical-align: middle;
+}
+.info-box-text{
+	float: right;
+}
+.degree::after {
+	content: '°C';
+	
+}
+.box-content{
+	display: inline-block;
+}
+.content-grass{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+.grass{
+	width: 3.5em;
+	height: 3.5em;
+	border-radius: 50%;
+	border: 2px solid green;
+  background-color: gray;
+
+}
+[class^=header]{
+  color: #fff;
+}
+.header-box{
+	background: #60C3CE;
+}
+.header-alert{
+	background: #E57373;
+}
+.header-control{
+	background: #0D47A1;
+}
+.tabs .nav > li > a{
+	padding: 0 !important;
+}
+.tabs .nav > li > a > button{
+	margin: 0 !important;
+}

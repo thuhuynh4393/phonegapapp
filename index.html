@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title> Aeroponic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap style sheet -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="css/angular-material.min.css">
+
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body ng-app="myApp" layout="row" >
+	<!-- SideNav -->
+  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2 hide-print _md-closed ng-isolate-scope _md-locked-open" md-component-id="left" hide-print="" md-is-locked-open="$mdMedia('gt-sm')" tabindex="-1" style="">
+		<!--sidebar start-->
+		<md-toolbar class="md-theme-indigo">
+	    <h1 class="md-toolbar-tools">TMA ADMIN</h1>
+	  </md-toolbar>
+		<aside>
+			<div id="sidebar"  >
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu">                
+					<li class="active">
+						<a class="" href="index.html">
+							<i class="fa fa-tachometer"></i>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li class="sub-menu">
+						<a href="javascript:;" class="">
+								<i class="fa fa-cogs"></i>
+								<span>Maganament</span>
+								<span class="menu-arrow arrow_carrot-right"></span>
+						</a>
+						<ul class="sub">
+								<li><a class="" href="form_component.html">Sub 1</a></li>                          
+								<li><a class="" href="form_validation.html">Sub 2</a></li>
+						</ul>
+					</li>      
+					<li>
+						<a class="" href="index.html">
+							<i class="fa fa-bookmark"></i>
+							<span>Log</span>
+						</a>
+					</li>                               
+				</ul>
+						<!-- sidebar menu end-->
+			</div>
+		</aside>
+		<!--sidebar end-->		
+	</md-sidenav>
+	<!-- End SideNav -->
+  <!-- Noi dung chinh -->
+	<div layout="column" tabindex="-1" role="main" flex="" class="layout-column flex">
+		<!-- Location -->
+		<md-toolbar class="md-whiteframe-z2">
+			<div ng-controller="MyController">
+					<md-button ng-click="openLeftMenu()" id="icon-menu"  class="md-fab md-mini md-primary md-hue-2">
+					 <i class="fa fa-bars"></i>
+					</md-button>
+					<!--logo start-->
+					<span class="lite">Dashboard</span>
+				</div>	
+		</md-toolbar>
+		<!-- END Location -->
+		<md-content class="main" md-scroll-y="" layout="column" flex="" class="layout-column flex">
+			<div class="tabs">
+				<!-- Bootstrap Tab-->		
+				<ul class="nav nav-tabs">
+				  <li class="active">
+				  	<a data-toggle="pill" href="#dashboardTab" class="next">
+				  	<md-button> DashBoard </md-button>
+					  </a>
+					</li>
+				  <li class="">
+				  	<a data-toggle="pill" href="#chartTab" class="next">
+				  	<md-button> Chart </md-button>
+					  </a>
+					</li>		  
+				</ul>
+				<div class="tab-content">
+				  <div id="dashboardTab" class="tab-pane fade active in">
+				  	<!-- Card temp -->
+				  	<div class="container">
+					  	<div class="row">
+					  		<div class="col-md-3 col-xs-12">
+					  			<md-card>				        
+					          <md-card-content >
+											<div class="info-box blue-bg">
+												<div class="info-box-icon"><img class="icon" src="img/icons/hot.svg" alt=""></i></div>
+												<div class="info-box-text">
+													<div class="degree md-display-1">27</div>
+													<div class="md-title">Box</div>
+												</div>						
+											</div><!--/.info-box-->						            
+					          </md-card-content>
+					        </md-card>
+					  		</div>
+					  		<div class="col-md-3 col-xs-12">
+					  			<md-card>				        
+					          <md-card-content >
+											<div class="info-box blue-bg">
+												<div class="info-box-icon"><img class="icon" src="img/icons/hot.svg" alt=""></i></div>
+												<div class="info-box-text">
+													<div class="degree md-display-1">27</div>
+													<div class="md-title">Box</div>
+												</div>						
+											</div><!--/.info-box-->						            
+					          </md-card-content>
+					        </md-card>
+					  		</div>
+					  		<div class="col-md-3 col-xs-12">
+					  			<md-card>				        
+					          <md-card-content >
+											<div class="info-box blue-bg">
+												<div class="info-box-icon"><img class="icon" src="img/icons/hot.svg" alt=""></i></div>
+												<div class="info-box-text">
+													<div class="degree md-display-1">27</div>
+													<div class="md-title">Box</div>
+												</div>						
+											</div><!--/.info-box-->						            
+					          </md-card-content>
+					        </md-card>
+					  		</div>
+					  		<div class="col-md-3 col-xs-12">
+					  			<md-card>				        
+					          <md-card-content >
+											<div class="info-box blue-bg">
+												<div class="info-box-icon"><img class="icon" src="img/icons/hot.svg" alt=""></i></div>
+												<div class="info-box-text">
+													<div class="degree md-display-1">27</div>
+													<div class="md-title">Box</div>
+												</div>						
+											</div><!--/.info-box-->						            
+					          </md-card-content>
+					        </md-card>			  			
+					  		</div>
+					  	</div>
+				  	</div>
+				  	<!-- BOx alert and controlling -->
+				  	<div class="container">
+				  		<div class="row">
+						  	<!-- Boxes -->
+						  	<div class="col-md-4 col-xs-12" ng-controller="boxCard">
+							      <md-card>
+							        <md-card-header class="header-box">
+							          <md-card-avatar>
+							            <md-icon class="md-avatar-icon" md-svg-icon="img/icons/hot.svg"></md-icon>
+							          </md-card-avatar>
+							          <md-card-header-text>
+							            <span class="md-title">Box</span>
+							          </md-card-header-text>
+							        </md-card-header>	
+							        <md-card-content>
+							        	<div ng-controller="SelectAsyncController" layout="column" layout-align="left" >		
+												  <div class="box-content" layout="column" layout-align="left">
+												    <md-select placeholder="Select BOx" ng-model="box" md-on-open="loadBoxes()" style="min-width: 200px;">
+												      <md-option ng-value="box" ng-model="id" ng-repeat="box in boxes">
+												      	{{box.name}}
+
+												    	</md-option>
+												    </md-select>	
+												    <p>{{id}}</p>
+												    <div class="row content-grass" >
+												    	<div class="col-xs-6" ng-repeat="x in box.values" style="text-align:center;">
+												    		<img class="grass" src="{{ x.comamn }}">
+												    	</div>
+												  	</div>
+												  </div>
+												</div>
+
+							        </md-card-content>
+							      </md-card>
+						    </div>		  
+					 			<!-- End boxes -->	 		
+						 		<!-- Alert -->
+						  	<div class="col-md-4 col-xs-12">
+							      <md-card>
+							        <md-card-header class="header-alert">
+							          <md-card-avatar>
+							            <i class="fa fa-bell-o fa-2x"></i>
+							          </md-card-avatar>
+							          <md-card-header-text>
+							            <span class="md-title">Alert Message</span>
+							          </md-card-header-text>
+							        </md-card-header>	
+							        <md-card-content>
+							        	<div class="alert-content">
+							        		<div class="alert-item">
+							        			<span><i class="fa fa-comment"></i></span>
+							        			<span class="red">Turn on the light</span>
+							        		</div>
+							        		<hr/>
+							        	</div>
+							        </md-card-content>
+							      </md-card>			    
+						 		</div><!-- End Alert -->
+						 		<!-- Control -->
+						  	<div class="col-md-4 col-xs-12">
+							      <md-card>
+							        <md-card-header class="header-control">
+							          <md-card-avatar>
+							            <i class="fa fa-wrench fa-2x"></i>
+							          </md-card-avatar>
+							          <md-card-header-text>
+							            <span class="md-title">Controlling Device</span>
+							          </md-card-header-text>
+							        </md-card-header>	
+							        <md-card-content>
+												<md-switch class="md-primary" ng-model="turnPump" ng-true-value="'On'" ng-false-value="'Off'"  aria-label="Pump">
+												  Pump:<strong>{{turnPump}}		</strong>		
+												</md-switch>
+												<div class="animate-switch-container"
+											    ng-switch="turnPump">
+											      <div ng-switch-when="On">
+											      	<form ng-submit="submit()" class="bidi" >
+														    <p>Selected Value: <strong>{{ level.pump }}</strong> </p>
+														    <md-radio-group ng-model="level.pump">
+														      <md-radio-button value="Low" class="md-primary" default>Low</md-radio-button>
+														      <md-radio-button value="Medium" class="md-primary"> Medium </md-radio-button>
+														      <md-radio-button value="Height" class="md-primary">Height</md-radio-button>
+														    </md-radio-group>
+														    
+														   </form>
+											      </div>
+											      <div ng-switch-default>Turn on Pump to select leve</div>
+											  </div>
+											  <hr />
+												<md-switch class="md-primary" ng-model="turnLight" ng-true-value="'On'" ng-false-value="'Off'" aria-label="Light">
+												  Light:<strong>{{turnLight}}</strong>
+												</md-switch>
+												<div class="animate-switch-container"
+											    ng-switch="turnLight">
+											      <div ng-switch-when="On">
+											      	<form ng-submit="submit()" class="bidi" >
+														    <p>Selected Value: <strong>{{ level.light }}</strong> </p>
+														    <md-radio-group ng-model="level.light">
+														      <md-radio-button value="Low" class="md-primary" default>Low</md-radio-button>
+														      <md-radio-button value="Medium" class="md-primary"> Medium </md-radio-button>
+														      <md-radio-button value="Height" class="md-primary">Height</md-radio-button>
+														    </md-radio-group>
+														    
+														   </form>
+											      </div>
+											      <div ng-switch-default>Turn on Light to select leve</div>
+											  </div>
+											  <hr />
+												<md-switch class="md-primary" ng-model="turnFan" ng-true-value="'On'" ng-false-value="'Off'" aria-label="Fan">
+												  Fan:<strong>{{turnFan}}</strong>
+												</md-switch>
+												<div class="animate-switch-container"
+											    ng-switch="turnFan">
+											      <div ng-switch-when="On">
+											      	<form ng-submit="submit()" class="bidi" >
+														    <p>Selected Value: <strong>{{ level.fan }}</strong> </p>
+														    <md-radio-group ng-model="level.fan">
+														      <md-radio-button value="Low" class="md-primary" default>Low</md-radio-button>
+														      <md-radio-button value="Medium" class="md-primary"> Medium </md-radio-button>
+														      <md-radio-button value="Height" class="md-primary">Height</md-radio-button>
+														    </md-radio-group>
+														    
+														   </form>
+											      </div>
+											      <div ng-switch-default>Turn on Fan to select leve</div>
+											  </div>										
+
+							        </md-card-content>
+							      </md-card>			    
+						    </div>
+						 		<!-- End Config -->	 
+					 		</div><!-- End Dashboard Card -->	
+				 		</div>	
+				 		<!-- BOx alert and controlling -->
+				 		<!-- Schedule -->
+			 			<div class="container">
+			 				<div class="row">
+			 					<!-- Right now -->
+			 					<div class="col-md-6 col-xs-12" ng-controller="boxCard">
+			 						<md-card>
+						        <md-card-header class="header-alert">
+											<md-card-avatar>
+						            <i class="fa fa-clock-o fa-2x"></i>
+						          </md-card-avatar>
+						          <md-card-header-text>
+						            <span class="md-title">Right now</span>
+						          </md-card-header-text>
+						        </md-card-header>	
+						        <md-card-content>
+						        	<div class="row" >
+						        		<div class="col-md-6 col-xs-12 plant">
+						        			
+						        		</div>
+
+											</div>
+						        </md-card-content>
+						      </md-card>
+			 					</div>
+			 					<!-- Schedule -->
+			 					<div class="col-md-6 col-xs-12">
+			 						<md-card>
+							        <md-card-header class="header-control">
+							          <md-card-avatar>
+							            <i class="fa fa-calendar-o fa-2x"></i>
+							          </md-card-avatar>
+							          <md-card-header-text>
+							            <span class="md-title">Schedule</span>
+							          </md-card-header-text>
+							        </md-card-header>	
+							        <md-card-content>
+							        </md-card-content>
+						      </md-card>
+			 					</div>
+			 				</div>
+			 			</div>
+				 		<!-- End Schedule -->
+				  </div>
+				  <!-- Charts -->
+				  <div id="chartTab" class="tab-pane fade">
+				    <p>aghaagg agasg asgasg asgsgsg</p>
+				  </div>	<!-- End chart -->	  
+				</div>		<!--  End Tabs-->
+			</div>
+		</md-content>
+	</div>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-animate.min.js"></script>
+  <script src="js/angular-aria.min.js"></script>
+  <script src="js/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="js/angular-material.min.js"></script>
+  <!-- My script -->
+  <script src="js/index.js"></script>
+
+  <script src="js/jquery-1.12.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>	
+  </body>
+</html>
