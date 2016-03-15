@@ -4,6 +4,7 @@
 }
 .info-box-text{
 	float: right;
+	text-align: right;
 }
 .degree::after {
 	content: '°C';
@@ -36,9 +37,12 @@
 .header-control{
 	background: #0D47A1;
 }
-.tabs .nav > li > a{
-	padding: 0 !important;
-}
-.tabs .nav > li > a > button{
-	margin: 0 !important;
+/*warning*/
+.warning{
+	color: #000;
+	-webkit-animation: warning 1s ease infinite;
+	   -moz-animation: warning 1s ease infinite;
+	    -ms-animation: warning 1s ease infinite;
+	     -o-animation: warning 1s ease infinite;
+	        animation: warning 1s ease infinite;
 }

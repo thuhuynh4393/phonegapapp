@@ -1,0 +1,15 @@
+@-webkit-keyframes warning {
+	50% { color: red; }
+}
+@-moz-keyframes warning {
+	50% { color: red; }
+}
+@-ms-keyframes warning {
+	50% { color: red; }
+}
+@-o-keyframes warning {
+	50% { color: red; }
+}
+@keyframes warning {
+	50% { color: red; }
+}

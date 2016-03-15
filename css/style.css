@@ -11,6 +11,7 @@ Website: http://geekslabs.com/
 @import url(dashboard.css);
 @import url(style-responsive.css);
 @import url(index.css);
+@import url(animation.css);
 
 body {    
     padding: 0px !important;
@@ -19,4 +20,7 @@ body {
 }
 .icon{
     height: 4em;
+}
+.mini-icon{
+    height: 1.5em;
 }

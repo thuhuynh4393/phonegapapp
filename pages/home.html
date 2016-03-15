@@ -1,0 +1,252 @@
+<md-tabs md-dynamic-height md-border-bottom>
+  <md-tab label="Dashboard">
+	  <div id="dashboardTab" ng-controller="SelectAsyncController">
+	  	<!-- Card temp -->
+	  	<div class="container-fluid">
+		  	<div class="row">
+		  		<div class="col-md-3 col-xs-12 col-sm-3">
+		  			<md-card>				        
+		          <md-card-content >
+								<div class="info-box blue-bg">
+									<div class="info-box-icon"><img class="icon" src="img/icons/cold.svg" alt=""></div>
+									<div class="info-box-text">
+										<div class="degree md-display-1">27</div>
+										<div class="md-title">Box</div>
+									</div>						
+								</div><!--/.info-box-->						            
+		          </md-card-content>
+		        </md-card>
+		  		</div>
+		  		<div class="col-md-3 col-xs-12 col-sm-3">
+		  			<md-card>				        
+		          <md-card-content >
+								<div class="info-box blue-bg">
+									<div class="info-box-icon"><img class="icon" src="img/icons/hot.svg" alt=""></div>
+									<div class="info-box-text">
+										<div class="degree md-display-1">27</div>
+										<div class="md-title">Box</div>
+									</div>						
+								</div><!--/.info-box-->						            
+		          </md-card-content>
+		        </md-card>
+		  		</div>
+		  		<div class="col-md-3 col-xs-12 col-sm-3">
+		  			<md-card>				        
+		          <md-card-content >
+								<div class="info-box blue-bg">
+									<div class="info-box-icon"><img class="icon" src="img/icons/ph.svg" alt=""></div>
+									<div class="info-box-text">
+										<div class="md-display-1">27</div>
+										<div class="md-title">Ph index</div>
+									</div>						
+								</div><!--/.info-box-->						            
+		          </md-card-content>
+		        </md-card>
+		  		</div>
+		  		<div class="col-md-3 col-xs-12 col-sm-3">
+		  			<md-card>				        
+		          <md-card-content >
+								<div class="info-box blue-bg">
+									<div class="info-box-icon"><img class="icon" src="img/icons/bulb.svg" alt=""></div>
+									<div class="info-box-text">
+										<div class="md-display-1">0</div>
+										<div class="md-title">Light Streng</div>
+									</div>						
+								</div><!--/.info-box-->						            
+		          </md-card-content>
+		        </md-card>			  			
+		  		</div>
+		  	</div>
+	  	</div>
+	  	<!-- Cards -->
+	  	<div class="container-fluid">
+		  	<div class="row" >
+		  		<div class="col-md-6">
+		  			<div class="row" >
+					  	<!-- Boxes -->
+					  	<div class="col-md-6 col-xs-12" >
+						      <md-card>
+						        <md-card-header class="header-box">
+						          <md-card-avatar>
+						            <i class="fa fa-archive fa-2x"></i>
+						          </md-card-avatar>
+						          <md-card-header-text>
+						            <span class="md-title">Box</span>
+						          </md-card-header-text>
+						        </md-card-header>	
+						        <md-card-content>
+						        	<div layout="column" layout-align="left" >		
+											  <div class="box-content" layout="column" layout-align="left">
+											    <md-select placeholder="Select BOx" ng-model="box" md-on-open="loadBoxes()">
+											      <md-option ng-value="box"  ng-repeat="box in boxes">
+											      	{{box.name}}
+
+											    	</md-option>
+											    </md-select>													    
+											    <div class="row content-grass" >
+											    	<div class="col-xs-6" ng-repeat="x in box.values" style="text-align:center;">												    		
+											    		<img class="grass" src="{{ x.comamn }}">
+											    		<p>{{x.name}}</p>
+											    	</div>
+											  	</div>
+											  </div>
+											</div>
+
+						        </md-card-content>
+						      </md-card>
+					    </div><!-- End boxes -->	 		
+					 		<!-- Alert -->
+					  	<div class="col-md-6 col-xs-12">
+						      <md-card>
+						        <md-card-header class="header-alert">
+						          <md-card-avatar>
+						            <i class="fa fa-bell-o fa-2x"></i>
+						          </md-card-avatar>
+						          <md-card-header-text>
+						            <span class="md-title">Alert Message</span>
+						          </md-card-header-text>
+						        </md-card-header>	
+						        <md-card-content>
+						        	<div class="alert-content">
+						        		<div class="alert-item">
+						        			<img class="mini-icon" src="img/icons/notice.svg" alt="">
+						        			<span class="warning">Turn on the light</span>
+						        		</div>
+						        		<hr/>
+						        	</div>
+						        </md-card-content>
+						      </md-card>			    
+					 		</div><!-- End Alert -->
+	 					</div>
+	 					<!-- Right now -->
+	 					<div class="row">
+		 					<div class="col-md-12 col-xs-12">
+		 						<md-card>
+					        <md-card-header class="header-alert">
+										<md-card-avatar>
+					            <i class="fa fa-clock-o fa-2x"></i>
+					          </md-card-avatar>
+					          <md-card-header-text>
+					            <span class="md-title">Right now</span>
+					          </md-card-header-text>
+					        </md-card-header>	
+					        <md-card-content>
+					        	<!-- <p ng-repeat="x in box.values">{{x.name}}</p> -->
+					        	<div class="row" >
+					        		<div class="col-md-6 col-xs-12 plant">
+					        			<h5><strong>Plants</strong></h5>
+					        			<div class="row">
+													<div  class="col-md-6 col-xs-6" ng-repeat="x in box.values">{{x.name}}
+													</div>
+												</div>
+					        		</div>
+					        		<div class="col-md-6 col-xs-12 plant">
+					        			<h5><strong>Enviroments</strong></h5>
+					        		</div>
+										</div>
+					        </md-card-content>
+					      </md-card>
+		 					</div><!--End Right now -->
+		 				</div>
+				 		
+			 		</div><!-- END BOx alert and controlling -->
+	 				<!-- Schedule RightNow-->
+	 				<div class="col-md-6">
+	 					<div class="row">
+		 					<!-- Control -->
+					  	<div class="col-md-12 col-xs-12">
+					      <md-card>
+					        <md-card-header class="header-control">
+					          <md-card-avatar>
+					            <i class="fa fa-wrench fa-2x"></i>
+					          </md-card-avatar>
+					          <md-card-header-text>
+					            <span class="md-title">Controlling Device</span>
+					          </md-card-header-text>
+					        </md-card-header>	
+					        <md-card-content>
+										<md-switch class="md-primary" ng-model="turnPump" ng-true-value="'On'" ng-false-value="'Off'"  aria-label="Pump">
+										  Pump:<strong>{{turnPump}}		</strong>		
+										</md-switch>
+										<div class="animate-switch-container"
+									    ng-switch="turnPump">
+									      <div ng-switch-when="On">
+									      	<form ng-submit="submit()" class="bidi" >
+												    <p>Selected Value: <strong>{{ level.pump }}</strong> </p>
+												    <md-radio-group ng-model="level.pump">
+												      <md-radio-button value="Low" class="md-primary" default>Low</md-radio-button>
+												      <md-radio-button value="Medium" class="md-primary"> Medium </md-radio-button>
+												      <md-radio-button value="Height" class="md-primary">Height</md-radio-button>
+												    </md-radio-group>
+												    
+												   </form>
+									      </div>
+									      <div ng-switch-default>Turn on Pump to select level</div>
+									  </div>
+									  <hr />
+										<md-switch class="md-primary" ng-model="turnLight" ng-true-value="'On'" ng-false-value="'Off'" aria-label="Light">
+										  Light:<strong>{{turnLight}}</strong>
+										</md-switch>
+										<div class="animate-switch-container"
+									    ng-switch="turnLight">
+									      <div ng-switch-when="On">
+									      	<form ng-submit="submit()" class="bidi" >
+												    <p>Selected Value: <strong>{{ level.light }}</strong> </p>
+												    <md-radio-group ng-model="level.light">
+												      <md-radio-button value="Low" class="md-primary" default>Low</md-radio-button>
+												      <md-radio-button value="Medium" class="md-primary"> Medium </md-radio-button>
+												      <md-radio-button value="Height" class="md-primary">Height</md-radio-button>
+												    </md-radio-group>
+												    
+												   </form>
+									      </div>
+									      <div ng-switch-default>Turn on Light to select level</div>
+									  </div>
+									  <hr />
+										<md-switch class="md-primary" ng-model="turnFan" ng-true-value="'On'" ng-false-value="'Off'" aria-label="Fan">
+										  Fan:<strong>{{turnFan}}</strong>
+										</md-switch>
+										<div class="animate-switch-container"
+									    ng-switch="turnFan">
+									      <div ng-switch-when="On">
+									      	<form ng-submit="submit()" class="bidi" >
+												    <p>Selected Value: <strong>{{ level.fan }}</strong> </p>
+												    <md-radio-group ng-model="level.fan">
+												      <md-radio-button value="Low" class="md-primary" default>Low</md-radio-button>
+												      <md-radio-button value="Medium" class="md-primary"> Medium </md-radio-button>
+												      <md-radio-button value="Height" class="md-primary">Height</md-radio-button>
+												    </md-radio-group>
+												    
+												   </form>
+									      </div>
+									      <div ng-switch-default>Turn on Fan to select level</div>
+									  </div>										
+
+					        </md-card-content>
+					      </md-card>			    
+					    </div><!-- End Control -->	 
+		 					<!-- Schedule -->
+		 					<div class="col-md-12 col-xs-12">
+		 						<md-card>
+						        <md-card-header class="header-control">
+						          <md-card-avatar>
+						            <i class="fa fa-calendar-o fa-2x"></i>
+						          </md-card-avatar>
+						          <md-card-header-text>
+						            <span class="md-title">Schedule</span>
+						          </md-card-header-text>
+						        </md-card-header>	
+						        <md-card-content>
+						        </md-card-content>
+					      </md-card>
+		 					</div>
+		 				</div>
+	 				</div><!-- End Schedule -->
+		 		</div>
+	 		</div><!--End Cards -->
+	 		
+	  </div><!-- End Dashboard -->
+	</md-tab>
+  <md-tab label="Chart">Chart</md-tab>
+  
+</md-tabs>
